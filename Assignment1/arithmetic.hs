@@ -14,6 +14,7 @@ data II = II NN NN
 
 -- Positive integers (to avoid dividing by 0)
 data PP = I | T PP
+  deriving (Eq,Show)
 
 -- Rational numbers
 data QQ =  QQ II PP
@@ -44,7 +45,11 @@ multN (S n) m = addN (multN n m) m
 ----------------
 -- QQ Arithmetic
 ----------------
+--adding positive numbers
 
+addP :: PP -> PP -> PP
+addP I m = (T m)
+addP (T n) m = T (addP n m)
 
 ----------------
 -- Normalisation
@@ -62,3 +67,4 @@ multN (S n) m = addN (multN n m) m
 main = do
     print $ addN (S (S O)) (S O)
     print $ multN (S (S O)) (S (S (S O)))
+    print $ addP (T I)(T I)
