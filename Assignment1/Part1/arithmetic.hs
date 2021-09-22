@@ -18,6 +18,7 @@ data PP = I | T PP
 
 -- Rational numbers
 data QQ =  QQ II PP
+  deriving (Eq, Show)
 
 ------------------------
 -- Arithmetic on the  VM
