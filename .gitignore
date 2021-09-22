@@ -12,3 +12,5 @@
 *.x
 *.info
 *.y
+*.DS_Store
+*.Rhistory
