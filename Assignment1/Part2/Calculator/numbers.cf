@@ -1,0 +1,6 @@
+Plus. Exp ::= Exp "+" Exp1 ;
+Times. Exp1 ::= Exp1 "*" Exp2 ;
+Num. Exp2 ::= Integer ;
+Minus. Exp ::= Exp "-" Exp1 ;
+
+coercions Exp 2 ;
