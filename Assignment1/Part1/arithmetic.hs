@@ -99,6 +99,27 @@ multP (T n) m = addP (multP n m) m
 -- Converting between VM-numbers and Haskell-numbers
 ----------------------------------------------------
 
+-- Precondition: Inputs are non-negative
+nn_int :: Integer -> NN
+
+int_nn :: NN->Integer
+
+ii_int :: Integer -> II
+
+int_ii :: II -> Integer
+
+-- Precondition: Inputs are positive
+pp_int :: Integer -> PP
+
+int_pp :: PP->Integer
+
+float_qq :: QQ -> Float
+
+------------------------------
+-- Normalisation by Evaluation
+------------------------------
+
+nbv :: II -> II
 
 ----------
 -- Testing
