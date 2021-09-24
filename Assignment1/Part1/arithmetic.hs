@@ -70,6 +70,18 @@ addP :: PP -> PP -> PP
 addP I m = (T m)
 addP (T n) m = T (addP n m)
 
+-- multiply positive numbers
+multP :: PP -> PP -> PP
+
+-- convert numbers of type PP to numbers of type II
+ii_pp :: PP -> II
+
+-- Addition: (a/b)+(c/d)=(ad+bc)/(bd)
+addQ :: QQ -> QQ -> QQ
+
+-- Multiplication: (a/b)*(c/d)=(ac)/(bd)
+multQ :: QQ -> QQ -> QQ
+
 ----------------
 -- Normalisation
 ----------------
