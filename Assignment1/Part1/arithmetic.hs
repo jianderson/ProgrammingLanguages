@@ -53,7 +53,8 @@ multI (II a b) (II c d) = II (addN (multN a c) (multN b d)) (addN (multN a d) (m
 
 
 -- Subtraction: (a-b)-(c-d)=(a+d)-(b+c)
--- subtrI :: II -> II -> II
+subtrI :: II -> II -> II
+subtrI (II a b) (II c d) = II (addN a d) (addN b c)
 
 -- Negation: -(a-b)=(b-a)
 -- negI :: II -> II
@@ -86,3 +87,4 @@ main = do
     print $ addP (T I)(T I)
     print $ addI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
     print $ multI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
+    print $ subtrI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
