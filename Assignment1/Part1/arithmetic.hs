@@ -42,6 +42,18 @@ multN (S n) m = addN (multN n m) m
 -- II Arithmetic
 ----------------
 
+-- Addition: (a-b)+(c-d)=(a+c)-(b+d)
+addI :: II -> II -> II
+addI (II a b) (II c d) = II (addN a c) (addN b d)
+
+-- Multiplication: (a-b)*(c-d)=(ac+bd)-(ad+bc)
+-- multI :: II -> II -> II
+
+-- Subtraction: (a-b)-(c-d)=(a+d)-(b+c)
+-- subtrI :: II -> II -> II
+
+-- Negation: -(a-b)=(b-a)
+-- negI :: II -> II
 
 ----------------
 -- QQ Arithmetic
@@ -69,3 +81,4 @@ main = do
     print $ addN (S (S O)) (S O)
     print $ multN (S (S O)) (S (S (S O)))
     print $ addP (T I)(T I)
+    print $ addI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
