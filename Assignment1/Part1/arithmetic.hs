@@ -92,6 +92,7 @@ multP (T n) m = addP (multP n m) m
 -- Normalisation
 ----------------
 
+normalizeI :: II -> II
 
 ----------------------------------------------------
 -- Converting between VM-numbers and Haskell-numbers
