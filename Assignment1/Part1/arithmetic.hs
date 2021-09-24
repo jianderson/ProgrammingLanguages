@@ -104,7 +104,9 @@ nn_int :: Integer -> NN
 nn_int 0 = O
 nn_int n = S (nn_int (n-1))
 
---int_nn :: NN->Integer
+int_nn :: NN->Integer
+int_nn O = 0
+int_nn (S n) = 1 + int_nn n
 
 --ii_int :: Integer -> II
 
@@ -138,3 +140,4 @@ main = do
     --print $ ii_pp (S (S O))
     --print $ normalizeI (II (S (S (S O))) (S (S O)))
     print $ nn_int (2)
+    print $ int_nn (S(S O))
