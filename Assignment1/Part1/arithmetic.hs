@@ -109,11 +109,18 @@ int_nn O = 0
 int_nn (S n) = 1 + int_nn n
 
 --ii_int :: Integer -> II
+--ii_int 0 = II (O) (O)
+--ii_int n = II (S(ii_int(n - 1))) (O)
+
 
 --int_ii :: II -> Integer
 
+
+
 -- Precondition: Inputs are positive
---pp_int :: Integer -> PP
+pp_int :: Integer -> PP
+pp_int 1 = I
+pp_int n = T(pp_int(n - 1))
 
 --int_pp :: PP->Integer
 
@@ -141,3 +148,5 @@ main = do
     --print $ normalizeI (II (S (S (S O))) (S (S O)))
     print $ nn_int (2)
     print $ int_nn (S(S O))
+    --print $ ii_int (2)
+    print $ pp_int (3)
