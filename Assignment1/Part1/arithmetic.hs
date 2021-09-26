@@ -57,7 +57,7 @@ subtrI :: II -> II -> II
 subtrI (II a b) (II c d) = II (addN a d) (addN b c)
 
 -- Negation: -(a-b)=(b-a)
--- negI :: II -> II
+negI :: II -> II
 negI (II a b) = II (b) (a)
 -- has some trouble with formatting for this one
 
