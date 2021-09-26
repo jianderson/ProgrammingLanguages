@@ -73,10 +73,14 @@ addP (T n) m = T (addP n m)
 -- multiply positive numbers
 multP :: PP -> PP -> PP
 multP I m = m
-multP (T n) m = addP (multP n m) m 
+multP (T n) m = addP (multP n m) m
 
 -- convert numbers of type PP to numbers of type II
---ii_pp :: PP -> II
+-- ii_pp :: PP -> II
+-- ii_pp I = II (S O) (O)
+-- ii_pp n = II (S ())
+
+-- ii_pp (T n) = II (n) (S O)
 
 -- Addition: (a/b)+(c/d)=(ad+bc)/(bd)
 --addQ :: QQ -> QQ -> QQ
@@ -106,3 +110,4 @@ main = do
     print $ subtrI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
     print $ negI (II (S (S (S O))) (S (S O)))
     print $ multP (T I)(T I)
+    print $ ii_pp (S (S O))
