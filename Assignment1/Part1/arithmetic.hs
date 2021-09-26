@@ -92,7 +92,8 @@ multP (T n) m = addP (multP n m) m
 -- Normalisation
 ----------------
 
-normalizeI :: II -> II
+-- normalizeI :: II -> II
+-- normalizeI (II a b) = II ((normalizeI II((a) (b))) (O))
 
 ----------------------------------------------------
 -- Converting between VM-numbers and Haskell-numbers
@@ -111,4 +112,5 @@ main = do
     print $ subtrI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
     print $ negI (II (S (S (S O))) (S (S O)))
     print $ multP (T I)(T I)
-    print $ ii_pp (S (S O))
+    --print $ ii_pp (S (S O))
+    print $ normalizeI (II (S (S (S O))) (S (S O)))
