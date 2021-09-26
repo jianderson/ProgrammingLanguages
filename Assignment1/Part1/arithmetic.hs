@@ -76,11 +76,9 @@ multP I m = m
 multP (T n) m = addP (multP n m) m
 
 -- convert numbers of type PP to numbers of type II
--- ii_pp :: PP -> II
--- ii_pp I = II (S O) (O)
--- ii_pp n = II (S ())
-
--- ii_pp (T n) = II (n) (S O)
+ii_pp :: PP -> II
+ii_pp I = II (S O) (O)
+ii_pp (T n) = addI (II (S O) (O)) (ii_pp(n))
 
 -- Addition: (a/b)+(c/d)=(ad+bc)/(bd)
 --addQ :: QQ -> QQ -> QQ
@@ -114,7 +112,8 @@ int_nn (S n) = 1 + int_nn n
 
 
 --int_ii :: II -> Integer
-
+--int_ii II (O) (O) = 0
+--int_ii II (n m) = 
 
 
 -- Precondition: Inputs are positive
@@ -146,7 +145,7 @@ main = do
     print $ subtrI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
     print $ negI (II (S (S (S O))) (S (S O)))
     print $ multP (T I)(T I)
-    --print $ ii_pp (S (S O))
+    print $ ii_pp (T I)
     --print $ normalizeI (II (S (S (S O))) (S (S O)))
     print $ nn_int (2)
     print $ int_nn (S(S O))
