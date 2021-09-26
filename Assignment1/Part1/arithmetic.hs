@@ -47,7 +47,10 @@ addI :: II -> II -> II
 addI (II a b) (II c d) = II (addN a c) (addN b d)
 
 -- Multiplication: (a-b)*(c-d)=(ac+bd)-(ad+bc)
--- multI :: II -> II -> II
+multI :: II -> II -> II
+multI (II a b) (II c d) = II (addN (multN a c) (multN b d)) (addN (multN a d) (multN b c))
+--struggled with this one because we initially didn't utilize addN
+
 
 -- Subtraction: (a-b)-(c-d)=(a+d)-(b+c)
 -- subtrI :: II -> II -> II
@@ -82,3 +85,4 @@ main = do
     print $ multN (S (S O)) (S (S (S O)))
     print $ addP (T I)(T I)
     print $ addI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
+    print $ multI (II (S (S O)) (S O))  (II (S (S (S O))) (S (S O)))
