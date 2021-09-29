@@ -110,13 +110,11 @@ int_nn (S n) = 1 + int_nn n
 
 ii_int :: Integer -> II
 ii_int 0 = II (O) (O)
---ii_int n = II (S(ii_int(n - 1))) (O)
 ii_int n = II (nn_int(n)) (O)
 
---int_ii :: II -> Integer
---int_ii II (O) (O) = 0
---int_ii II (n m) =
-
+int_ii :: II -> Integer
+int_ii (II (O) (O)) = 0
+int_ii (II (n) (m)) = int_nn(n) - int_nn(m)
 
 -- Precondition: Inputs are positive
 pp_int :: Integer -> PP
@@ -156,3 +154,4 @@ main = do
     print $ addQ (QQ (II (S O) (O)) (T I)) (QQ (II (S(S O)) (O)) (T I))
     print $ multQ (QQ (II (S O) (O)) (T I)) (QQ (II (S O) (O)) (T I))
     print $ ii_int (4)
+    print $ int_ii (II (S(S O)) (S O))
