@@ -85,7 +85,8 @@ addQ :: QQ -> QQ -> QQ
 addQ (QQ a b) (QQ c d) = QQ (addI(multI(a)(ii_pp(d))) (multI(ii_pp(b))(c))) (multP(b)(d))
 
 -- Multiplication: (a/b)*(c/d)=(ac)/(bd)
---multQ :: QQ -> QQ -> QQ
+multQ :: QQ -> QQ -> QQ
+multQ (QQ a b) (QQ c d) = QQ (multI(a)(c)) (multP(b)(d))
 
 ----------------
 -- Normalisation
@@ -114,7 +115,7 @@ int_nn (S n) = 1 + int_nn n
 
 --int_ii :: II -> Integer
 --int_ii II (O) (O) = 0
---int_ii II (n m) = 
+--int_ii II (n m) =
 
 
 -- Precondition: Inputs are positive
@@ -154,3 +155,4 @@ main = do
     print $ pp_int (3)
     print $ int_pp (T(T I))
     print $ addQ (QQ (II (S O) (O)) (T I)) (QQ (II (S(S O)) (O)) (T I))
+    print $ multQ (QQ (II (S O) (O)) (T I)) (QQ (II (S O) (O)) (T I))
