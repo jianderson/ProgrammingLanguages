@@ -1,3 +1,6 @@
+--TO DO STILL = normalization and QQ->Float
+
+
 -- A Virtual Machine (VM) for Arithmetic (template)
 
 -----------------------
