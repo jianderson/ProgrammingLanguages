@@ -4,7 +4,7 @@ Num. Exp2 ::= Integer ;
 
 
 Minus. Exp ::= Exp "-" Exp1 ;
---Divide. Exp1 ::= Exp1 "/" Exp2 ;
+Divide. Exp1 ::= Exp1 "div" Exp2 ;
 Mod. Exp1 ::= Exp1 "mod" Exp2 ;
 Neg. Exp ::= "-" Exp1;
 --Pwr. Exp2 ::= Exp2 "^" Exp2;
