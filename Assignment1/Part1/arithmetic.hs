@@ -96,7 +96,9 @@ multQ (QQ a b) (QQ c d) = QQ (multI(a)(c)) (multP(b)(d))
 ----------------
 
 --normalizeI :: II -> II
---normalizeI (II a b) = II (nn_int(int_nn(a)-int_nn(b))) (O)
+--normalizeI (II O b) = (II O b)
+--normalizeI (II a O) = (II a O)
+--normalizeI (II a b) = (normalizeI(II (addN (a) (b)) - S)(O))
 
 ----------------------------------------------------
 -- Converting between VM-numbers and Haskell-numbers
@@ -128,7 +130,8 @@ int_pp :: PP->Integer
 int_pp I = 1
 int_pp (T n) = 1 + int_pp n
 
---float_qq :: QQ -> Float
+float_qq :: QQ -> Float
+float_qq (QQ n m) = fromInteger(int_ii(n)) / fromInteger(int_pp(m))
 
 ------------------------------
 -- Normalisation by Evaluation
@@ -159,3 +162,5 @@ main = do
     print $ ii_int (4)
     print $ int_ii (II (S(S O)) (S O))
     print $ nbv (II (S (S (S O))) (S (S O)))
+    print $ float_qq (QQ (II (S(S O)) (O)) (T(T I)))
+    --print $ normalizeI (II (S (S (S O))) (S (S O)))
