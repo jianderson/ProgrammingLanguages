@@ -1,6 +1,3 @@
---TO DO STILL = normalization and QQ->Float
-
-
 -- A Virtual Machine (VM) for Arithmetic (template)
 
 -----------------------
@@ -164,3 +161,21 @@ main = do
     print $ nbv (II (S (S (S O))) (S (S O)))
     print $ float_qq (QQ (II (S(S O)) (O)) (T(T I)))
     --print $ normalizeI (II (S (S (S O))) (S (S O)))
+
+
+    print $ "New tests"
+
+    --given test cases 
+    let i = 4
+    let j = 2
+    let k = 1
+    let l = 3
+    print $ int_ii (addI (II (nn_int i) (nn_int j)) (II (nn_int k) (nn_int l)))
+    print $ int_ii (multI (II (nn_int i) (nn_int j)) (II (nn_int k) (nn_int l)))
+    -- Fractions: (QQ i j) represents i/j, (QQ k l) represents k/l
+    print $ float_qq (addQ (QQ (ii_int i) (pp_int j)) (QQ (ii_int k) (pp_int l)))
+    print $ float_qq (multQ (QQ (ii_int i) (pp_int j)) (QQ (ii_int k) (pp_int l)))
+    -- Normalisation (recursive definition)
+    --print $ normalizeI (II (nn_int i) (nn_int j))
+    -- Normalisation (by evaluation)
+    print $ nbv (II (nn_int i) (nn_int j))
