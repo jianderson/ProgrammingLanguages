@@ -92,9 +92,10 @@ multQ (QQ a b) (QQ c d) = QQ (multI(a)(c)) (multP(b)(d))
 -- Normalisation
 ----------------
 
---normalizeI :: II -> II
---normalizeI (II O b) = (II O b)
---normalizeI (II a O) = (II a O)
+normalizeI :: II -> II
+normalizeI (II O b) = (II O b)
+normalizeI (II a O) = (II a O)
+normalizeI (II (S a) (S b)) = normalizeI (II a b)
 --normalizeI (II a b) = (normalizeI(II (addN (a) (b)) - S)(O))
 
 ----------------------------------------------------
@@ -160,7 +161,7 @@ main = do
     print $ int_ii (II (S(S O)) (S O))
     print $ nbv (II (S (S (S O))) (S (S O)))
     print $ float_qq (QQ (II (S(S O)) (O)) (T(T I)))
-    --print $ normalizeI (II (S (S (S O))) (S (S O)))
+    print $ normalizeI (II (S (S (S O))) (S (S O)))
 
 
     print $ "New tests"
@@ -176,6 +177,6 @@ main = do
     print $ float_qq (addQ (QQ (ii_int i) (pp_int j)) (QQ (ii_int k) (pp_int l)))
     print $ float_qq (multQ (QQ (ii_int i) (pp_int j)) (QQ (ii_int k) (pp_int l)))
     -- Normalisation (recursive definition)
-    --print $ normalizeI (II (nn_int i) (nn_int j))
+    print $ normalizeI (II (nn_int i) (nn_int j))
     -- Normalisation (by evaluation)
     print $ nbv (II (nn_int i) (nn_int j))
