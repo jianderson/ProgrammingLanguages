@@ -49,8 +49,6 @@ addI (II a b) (II c d) = II (addN a c) (addN b d)
 -- Multiplication: (a-b)*(c-d)=(ac+bd)-(ad+bc)
 multI :: II -> II -> II
 multI (II a b) (II c d) = II (addN (multN a c) (multN b d)) (addN (multN a d) (multN b c))
---struggled with this one because we initially didn't utilize addN
-
 
 -- Subtraction: (a-b)-(c-d)=(a+d)-(b+c)
 subtrI :: II -> II -> II
@@ -59,13 +57,12 @@ subtrI (II a b) (II c d) = II (addN a d) (addN b c)
 -- Negation: -(a-b)=(b-a)
 negI :: II -> II
 negI (II a b) = II (b) (a)
--- has some trouble with formatting for this one
 
 ----------------
 -- QQ Arithmetic
 ----------------
---adding positive numbers
 
+--adding positive numbers
 addP :: PP -> PP -> PP
 addP I m = (T m)
 addP (T n) m = T (addP n m)
@@ -96,7 +93,6 @@ normalizeI :: II -> II
 normalizeI (II O b) = (II O b)
 normalizeI (II a O) = (II a O)
 normalizeI (II (S a) (S b)) = normalizeI (II a b)
---normalizeI (II a b) = (normalizeI(II (addN (a) (b)) - S)(O))
 
 ----------------------------------------------------
 -- Converting between VM-numbers and Haskell-numbers
@@ -142,6 +138,7 @@ nbv (II a b) = II (nn_int(int_nn(a)-int_nn(b))) (O)
 -- Testing
 ----------
 main = do
+    print $ "Our test cases:"
     print $ addN (S (S O)) (S O)
     print $ multN (S (S O)) (S (S (S O)))
     print $ addP (T I)(T I)
@@ -163,10 +160,9 @@ main = do
     print $ float_qq (QQ (II (S(S O)) (O)) (T(T I)))
     print $ normalizeI (II (S (S (S O))) (S (S O)))
 
-
-    print $ "New tests"
-
-    --given test cases 
+    ----------
+    -- Provided Test Cases From Specification 
+    ----------
     let i = 4
     let j = 2
     let k = 1
