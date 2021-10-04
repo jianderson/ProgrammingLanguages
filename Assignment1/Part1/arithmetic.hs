@@ -138,7 +138,6 @@ nbv (II a b) = II (nn_int(int_nn(a)-int_nn(b))) (O)
 -- Testing
 ----------
 main = do
-    print $ "Our test cases:"
     print $ addN (S (S O)) (S O)
     print $ multN (S (S O)) (S (S (S O)))
     print $ addP (T I)(T I)
