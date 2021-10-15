@@ -34,3 +34,22 @@ def abs(first):
 
 
 if sys.argv[1] == "*":
+    multiply(sys.argv[0], sys.argv[2])
+
+if sys.argv[1] == "+":
+    add(sys.argv[0], sys.argv[2])
+
+if sys.argv[1] == "-":
+    minus(sys.argv[0], sys.argv[2])
+
+if sys.argv[1] == "/":
+    divide(sys.argv[0], sys.argv[2])
+
+if sys.argv[1] == "%":
+    mod(sys.argv[0], sys.argv[2])
+
+if sys.argv[1] == "^":
+    power(sys.argv[0], sys.argv[2])
+
+if sys.argv[0] == "|":
+    abs(sys.argv[1])
