@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/bin"
-libdir     = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/lib/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0-7BabljUdsQ4HpjWnh4yNtU"
-dynlibdir  = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/lib/x86_64-osx-ghc-8.6.4"
-datadir    = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/share/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"
-libexecdir = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/libexec/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"
-sysconfdir = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/etc"
+bindir     = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/bin"
+libdir     = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/lib/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0-7BabljUdsQ4HpjWnh4yNtU"
+dynlibdir  = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/lib/x86_64-osx-ghc-8.6.4"
+datadir    = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/share/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"
+libexecdir = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/libexec/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"
+sysconfdir = "/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/a4a18b8565e9c5d7122ebfc82b52e6f83274fcf0118216d14458e984a25898bd/8.6.4/etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "LambdaNat_bindir") (\_ -> return bindir)

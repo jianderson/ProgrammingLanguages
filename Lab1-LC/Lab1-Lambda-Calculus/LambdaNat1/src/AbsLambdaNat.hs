@@ -3,7 +3,7 @@
 
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
--- | The abstract syntax of language LambdaNat0.
+-- | The abstract syntax of language LambdaNat1.
 
 module AbsLambdaNat where
 

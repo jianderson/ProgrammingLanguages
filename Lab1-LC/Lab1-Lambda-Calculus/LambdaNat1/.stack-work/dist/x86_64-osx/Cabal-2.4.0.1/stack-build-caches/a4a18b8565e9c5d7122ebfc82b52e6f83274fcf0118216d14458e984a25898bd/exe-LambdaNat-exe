@@ -1,12 +1,12 @@
-/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/package.yaml:
-  hash: b8d8fbf1254b0c779a7866ff27e59097372916566ea7f8ed4b925988785c2605
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/LambdaNat-exe/autogen/Paths_LambdaNat.hs
+: hash: 41e040c353c999361affe9868bba1637d197cab6075e262c5cb7d79fcab4a4ca
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/app/Main.hs
+: hash: 40d9a8b9cddaca7f30cba6e665857206eba453d6fe9cf13c86f94267f167be20
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/LambdaNat.cabal
+: hash: 391619f93065ebe98c37bc635d210cdb5763e02ed0e4e45f09a5a82e939efd9a
 /Users/jillian/.stack/programs/x86_64-osx/ghc-8.6.4/lib/ghc-8.6.4/include/ghcversion.h:
   hash: 529291d4a255ef1c3ec99116d8dca391f2db7bad8b5eab6dcbf9a70354c6eedf
-/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/app/Main.hs:
-  hash: 40d9a8b9cddaca7f30cba6e665857206eba453d6fe9cf13c86f94267f167be20
-? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/LambdaNat-exe/autogen/cabal_macros.h
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/LambdaNat-exe/autogen/cabal_macros.h
 : hash: 39f3f60ac5029bd6475f1480e73acd6821af2dbfe73e45c0135fa39aab16f29c
-? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/LambdaNat-exe/autogen/Paths_LambdaNat.hs
-: hash: 41e040c353c999361affe9868bba1637d197cab6075e262c5cb7d79fcab4a4ca
-/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat0/LambdaNat.cabal:
-  hash: 391619f93065ebe98c37bc635d210cdb5763e02ed0e4e45f09a5a82e939efd9a
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Lab1-LC/Lab1-Lambda-Calculus/LambdaNat1/package.yaml
+: hash: b8d8fbf1254b0c779a7866ff27e59097372916566ea7f8ed4b925988785c2605
