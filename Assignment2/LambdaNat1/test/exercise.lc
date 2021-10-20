@@ -13,6 +13,6 @@
 // (\x.\y.y) (a b) c //echo "(\x.\y.y) (a b) c" | stack exec LambdaNat-exe
 // (\x.\y.x) (a b c) //echo "(\x.\y.x) (a b c)" | stack exec LambdaNat-exe
 // (\x.\y.y) (a b c) //echo "(\x.\y.y) (a b c)" | stack exec LambdaNat-exe
-(\ x. S x) S 0
 
 // make up your own
+//(\ x. S x) S 0
