@@ -22,11 +22,11 @@ Id literals are recognized by the regular expression
 The set of reserved words is the set of terminals appearing in the grammar. Those reserved words that consist of non-letter characters are called symbols, and they are treated in a different way from those that are similar to identifiers. The lexer follows rules familiar from languages like Haskell, C, and Java, including longest match and spacing conventions.
 
 The reserved words used in LambdaNat1 are the following:
-
-There are no reserved words in LambdaNat1.
+  | ``S`` |  |  |
 
 The symbols used in LambdaNat1 are the following:
-  | \ | . | ( | )
+  | \ | . | 0 | (
+  | ) |  |  |
 
 ===Comments===
 Single-line comments begin with //.Multiple-line comments are  enclosed with /* and */.
@@ -42,7 +42,10 @@ All other symbols are terminals.
   |  |  **|**  | //Exp2//
   | //Exp2// | -> | //Exp2// //Exp3//
   |  |  **|**  | //Exp3//
-  | //Exp3// | -> | //Id//
+  | //Exp3// | -> | ``0``
+  |  |  **|**  | ``S`` //Exp3//
+  |  |  **|**  | //Exp4//
+  | //Exp4// | -> | //Id//
   |  |  **|**  | ``(`` //Exp// ``)``
   | //Exp// | -> | //Exp1//
 

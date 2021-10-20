@@ -27,13 +27,13 @@ evalCBN (EApp e1 e2) = case (evalCBN e1) of
     (EAbs i e3) -> evalCBN (subst i e2 e3)
     e3 -> EApp e3 e2
 
+
+--OUR CODE
 evalCBN (ENatS e3) = ENatS (evalCBN e3)
-evalCBN ENatO = ENatO
+evalCBN ENat0 = ENat0
 
 
-----------------------------------------------------
---- YOUR CODE goes here for extending the interpreter
-----------------------------------------------------
+
 evalCBN x = x -- this is a catch all clause, currently only for variables, must be the clause of the eval function
 
 -- fresh generates fresh names for substitutions, can be ignored for now
@@ -60,11 +60,8 @@ subst id s (EAbs id1 e1) =
         e2 = subst id1 (EVar f) e1 in
         EAbs f (subst id s e2)
 
---subst id e2 (ENatS e3) = ENatS (subst id e2 e3)
---subst id
 
-subst id s NatO = ENatO
-subst id s *NatS x) = NatS (subst id s x)
-----------------------------------------------------------------
---- YOUR CODE goes here if subst needs to be extended as well
-----------------------------------------------------------------
+--sudo code: subst i e2 (S e3) = S(subst i e2 e3)
+--CODE HERE
+subst id s ENat0 = ENat0
+subst id e2 (ENatS e3) = ENatS (subst id e2 e3)

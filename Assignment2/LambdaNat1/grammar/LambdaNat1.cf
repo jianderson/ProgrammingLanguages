@@ -7,7 +7,7 @@ EAbs.   Exp1 ::= "\\" Id "." Exp ;  -- in effect: "\" Id "." Exp ; -- btw, prono
 EApp.   Exp2 ::= Exp2 Exp3 ; -- application associates on the left
 ENat0.  Exp3 ::= "0" ;
 ENatS.  Exp3 ::= "S" Exp3 ;
-EVar.   Exp3 ::= Id ;
+EVar.   Exp4 ::= Id ;
 
 coercions Exp 4 ;
 
