@@ -42,7 +42,7 @@ fresh_aux :: Exp -> String
 fresh_aux (EVar (Id i)) = i ++ "0"
 fresh_aux (EApp e1 e2) = fresh_aux e1 ++ fresh_aux e2
 fresh_aux (EAbs (Id i) e) = i ++ fresh_aux e
---fresh_aux _ = "0"
+fresh_aux _ = "0"
 
 fresh = Id . fresh_aux -- for Id see AbsLamdaNat.hs
 
@@ -63,5 +63,6 @@ subst id s (EAbs id1 e1) =
 
 --sudo code: subst i e2 (S e3) = S(subst i e2 e3)
 --CODE HERE
-subst id s ENat0 = ENat0
+--subst id s ENat0 = ENat0
+subst id e2 ENat0 = ENat0
 subst id e2 (ENatS e3) = ENatS (subst id e2 e3)

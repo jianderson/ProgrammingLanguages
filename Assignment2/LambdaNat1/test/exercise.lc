@@ -16,3 +16,7 @@
 
 // make up your own
 //(\ x. S x) S 0
+//(\ x. \ y. S x y) S S 0
+//(\ x . \ y. x) S 0
+//(\ x . S x) S 0
+(\x. \y. S x y) S 0
