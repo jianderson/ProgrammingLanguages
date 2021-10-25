@@ -14,8 +14,10 @@ echo "(\ x. \y. S x y) S S 0" | stack exec LambdaNat-exe
 */
 
 // make up your own
-(\ x. S x) S 0
+//(\ x. S x) S 0
 //(\ x. \ y. S x y) S S 0
 //(\ x . \ y. x) S 0
 //(\ x . S x) S 0
 //(\x. \y. S x y) S 0
+
+let f = \x. if x=0 then a else b in (f 0)
