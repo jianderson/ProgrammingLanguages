@@ -34,6 +34,7 @@ evalCBN (EMinusOne e) = case (evalCBN e) of
     ENat0 -> ENat0 
     (ENatS e) -> e
 
+
 evalCBN (ELet i e1 e2) = evalCBN(EApp (EAbs i e2) e1)
 
 evalCBN ENat0 = ENat0
