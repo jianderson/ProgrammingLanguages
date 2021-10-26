@@ -29,6 +29,11 @@ evalCBN (EApp e1 e2) = case (evalCBN e1) of
 
 evalCBN (EIf e1 e2 e3 e4) = if (evalCBN e1) == (evalCBN e2) then evalCBN e3 else evalCBN e4
 
+
+evalCBN (EMinusOne e) = case (evalCBN e) of 
+    ENat0 -> ENat0 
+    (ENatS e) -> e
+
 evalCBN ENat0 = ENat0
 evalCBN (ENatS e) = ENatS (evalCBN e)
 ----------------------------------------------------
@@ -69,3 +74,8 @@ subst id s (ENatS e) = ENatS (subst id s e)
 
 
 subst id s (EIf e1 e2 e3 e4) = EIf (subst id s e1) (subst id s e2) (subst id s e3) (subst id s e4)
+
+subst id s (EMinusOne e) = EMinusOne (subst id s e)
+
+
+

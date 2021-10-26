@@ -24,7 +24,12 @@ transProgram x = case x of
 transExp :: AbsLambdaNat.Exp -> Result
 transExp x = case x of
   AbsLambdaNat.EAbs id exp -> failure x
+  AbsLambdaNat.EIf exp1 exp2 exp3 exp4 -> failure x
+  AbsLambdaNat.ELet id exp1 exp2 -> failure x
+  AbsLambdaNat.ERec id exp1 exp2 -> failure x
+  AbsLambdaNat.EMinusOne exp -> failure x
   AbsLambdaNat.EApp exp1 exp2 -> failure x
   AbsLambdaNat.ENat0 -> failure x
   AbsLambdaNat.ENatS exp -> failure x
   AbsLambdaNat.EVar id -> failure x
+  AbsLambdaNat.EFix exp -> failure x

@@ -14,7 +14,17 @@ import qualified Data.String
 data Program = Prog Exp
   deriving (C.Eq, C.Ord, C.Show, C.Read)
 
-data Exp = EAbs Id Exp | EApp Exp Exp | ENat0 | ENatS Exp | EVar Id
+data Exp
+    = EAbs Id Exp
+    | EIf Exp Exp Exp Exp
+    | ELet Id Exp Exp
+    | ERec Id Exp Exp
+    | EMinusOne Exp
+    | EApp Exp Exp
+    | ENat0
+    | ENatS Exp
+    | EVar Id
+    | EFix Exp
   deriving (C.Eq, C.Ord, C.Show, C.Read)
 
 newtype Id = Id String

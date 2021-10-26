@@ -18,7 +18,7 @@ import Prelude
   , Int, Integer, Double, (+), (-), (*)
   , String, (++)
   , ShowS, showChar, showString
-  , all, dropWhile, elem, foldr, id, map, null, replicate, shows, span
+  , all, elem, foldr, id, map, null, replicate, shows, span
   )
 import Data.Char ( Char, isSpace )
 import qualified AbsLambdaNat
@@ -34,19 +34,48 @@ doc :: ShowS -> Doc
 doc = (:)
 
 render :: Doc -> String
-render d = rend 0 (map ($ "") $ d []) "" where
-  rend i = \case
-    "["      :ts -> showChar '[' . rend i ts
-    "("      :ts -> showChar '(' . rend i ts
-    "{"      :ts -> showChar '{' . new (i+1) . rend (i+1) ts
-    "}" : ";":ts -> new (i-1) . space "}" . showChar ';' . new (i-1) . rend (i-1) ts
-    "}"      :ts -> new (i-1) . showChar '}' . new (i-1) . rend (i-1) ts
-    [";"]        -> showChar ';'
-    ";"      :ts -> showChar ';' . new i . rend i ts
-    t  : ts@(p:_) | closingOrPunctuation p -> showString t . rend i ts
-    t        :ts -> space t . rend i ts
-    _            -> id
-  new i     = showChar '\n' . replicateS (2*i) (showChar ' ') . dropWhile isSpace
+render d = rend 0 False (map ($ "") $ d []) ""
+  where
+  rend
+    :: Int        -- ^ Indentation level.
+    -> Bool       -- ^ Pending indentation to be output before next character?
+    -> [String]
+    -> ShowS
+  rend i p = \case
+      "["      :ts -> char '[' . rend i False ts
+      "("      :ts -> char '(' . rend i False ts
+      "{"      :ts -> onNewLine i     p . showChar   '{'  . new (i+1) ts
+      "}" : ";":ts -> onNewLine (i-1) p . showString "};" . new (i-1) ts
+      "}"      :ts -> onNewLine (i-1) p . showChar   '}'  . new (i-1) ts
+      [";"]        -> char ';'
+      ";"      :ts -> char ';' . new i ts
+      t  : ts@(s:_) | closingOrPunctuation s
+                   -> pending . showString t . rend i False ts
+      t        :ts -> pending . space t      . rend i False ts
+      []           -> id
+    where
+    -- Output character after pending indentation.
+    char :: Char -> ShowS
+    char c = pending . showChar c
+
+    -- Output pending indentation.
+    pending :: ShowS
+    pending = if p then indent i else id
+
+  -- Indentation (spaces) for given indentation level.
+  indent :: Int -> ShowS
+  indent i = replicateS (2*i) (showChar ' ')
+
+  -- Continue rendering in new line with new indentation.
+  new :: Int -> [String] -> ShowS
+  new j ts = showChar '\n' . rend j True ts
+
+  -- Make sure we are on a fresh line.
+  onNewLine :: Int -> Bool -> ShowS
+  onNewLine i p = (if p then id else showChar '\n') . indent i
+
+  -- Separate given string from following text by a space (if needed).
+  space :: String -> ShowS
   space t s =
     case (all isSpace t', null spc, null rest) of
       (True , _   , True ) -> []              -- remove trailing space
@@ -80,15 +109,18 @@ replicateS n f = concatS (replicate n f)
 
 class Print a where
   prt :: Int -> a -> Doc
-  prtList :: Int -> [a] -> Doc
-  prtList i = concatD . map (prt i)
 
 instance {-# OVERLAPPABLE #-} Print a => Print [a] where
-  prt = prtList
+  prt i = concatD . map (prt i)
 
 instance Print Char where
-  prt     _ s = doc (showChar '\'' . mkEsc '\'' s . showChar '\'')
-  prtList _ s = doc (showChar '"' . concatS (map (mkEsc '"') s) . showChar '"')
+  prt _ c = doc (showChar '\'' . mkEsc '\'' c . showChar '\'')
+
+instance Print String where
+  prt _ = printString
+
+printString :: String -> Doc
+printString s = doc (showChar '"' . concatS (map (mkEsc '"') s) . showChar '"')
 
 mkEsc :: Char -> Char -> ShowS
 mkEsc q = \case
@@ -109,7 +141,6 @@ instance Print Double where
 
 instance Print AbsLambdaNat.Id where
   prt _ (AbsLambdaNat.Id i) = doc $ showString i
-
 instance Print AbsLambdaNat.Program where
   prt i = \case
     AbsLambdaNat.Prog exp -> prPrec i 0 (concatD [prt 0 exp])
@@ -117,8 +148,12 @@ instance Print AbsLambdaNat.Program where
 instance Print AbsLambdaNat.Exp where
   prt i = \case
     AbsLambdaNat.EAbs id_ exp -> prPrec i 1 (concatD [doc (showString "\\"), prt 0 id_, doc (showString "."), prt 0 exp])
-    AbsLambdaNat.EApp exp1 exp2 -> prPrec i 2 (concatD [prt 2 exp1, prt 3 exp2])
-    AbsLambdaNat.ENat0 -> prPrec i 3 (concatD [doc (showString "0")])
-    AbsLambdaNat.ENatS exp -> prPrec i 3 (concatD [doc (showString "S"), prt 3 exp])
-    AbsLambdaNat.EVar id_ -> prPrec i 4 (concatD [prt 0 id_])
-
+    AbsLambdaNat.EIf exp1 exp2 exp3 exp4 -> prPrec i 2 (concatD [doc (showString "if"), prt 0 exp1, doc (showString "="), prt 0 exp2, doc (showString "then"), prt 0 exp3, doc (showString "else"), prt 0 exp4])
+    AbsLambdaNat.ELet id_ exp1 exp2 -> prPrec i 2 (concatD [doc (showString "let"), prt 0 id_, doc (showString "="), prt 0 exp1, doc (showString "in"), prt 0 exp2])
+    AbsLambdaNat.ERec id_ exp1 exp2 -> prPrec i 2 (concatD [doc (showString "let"), doc (showString "rec"), prt 0 id_, doc (showString "="), prt 0 exp1, doc (showString "in"), prt 0 exp2])
+    AbsLambdaNat.EMinusOne exp -> prPrec i 2 (concatD [doc (showString "minus_one"), prt 0 exp])
+    AbsLambdaNat.EApp exp1 exp2 -> prPrec i 3 (concatD [prt 3 exp1, prt 4 exp2])
+    AbsLambdaNat.ENat0 -> prPrec i 4 (concatD [doc (showString "0")])
+    AbsLambdaNat.ENatS exp -> prPrec i 4 (concatD [doc (showString "S"), prt 4 exp])
+    AbsLambdaNat.EVar id_ -> prPrec i 5 (concatD [prt 0 id_])
+    AbsLambdaNat.EFix exp -> prPrec i 2 (concatD [doc (showString "fix"), prt 0 exp])

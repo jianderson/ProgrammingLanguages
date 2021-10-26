@@ -20,4 +20,6 @@ echo "(\ x. \y. S x y) S S 0" | stack exec LambdaNat-exe
 //(\ x . S x) S 0
 //(\x. \y. S x y) S 0
 
-let f = \x. if x=0 then a else b in (f 0)
+//let f = \x. if x=0 then a else b in (f 0)
+
+if (S 0) = minus_one (S(S 0)) then (S 0) else 0

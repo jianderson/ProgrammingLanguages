@@ -1,0 +1,36 @@
+/usr/lib/ghc/include/ghcversion.h:
+  hash: 2d72b80612e3bba9548fc5a4435b2d174dce71c27b8a3d330b6dc8ddf66ab2d4
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/AbsLambdaNat.hs:
+  hash: c2630a2741968b7d56783e65bae529f16f05d17152bb5f343c05322758f5feeb
+? /home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/autogen/cabal_macros.h
+: hash: f2f21de0f5f986e4bf4e7095ca9f00457855205b766ce32c782575f97bfeecec
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/ParLambdaNat.hs:
+  hash: 1e595435636d296bc8f00a2984ebc7538a17fc9f31c564e639f9bbf52b8c5e74
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/package.yaml:
+  hash: b8d8fbf1254b0c779a7866ff27e59097372916566ea7f8ed4b925988785c2605
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/README.md:
+  hash: d5e1a9f7b7c7a02fe5108f6569cba9eeea6f282c99852fed5f19a22472abddfb
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/PrintLambdaNat.hs:
+  hash: 31c8fd3422fa9db3812e4dd0c7e264a057c3b600c1d26c4bd6ea35379b764809
+/root/.stack/programs/x86_64-linux/ghc-8.6.4/lib/ghc-8.6.4/include/ghcautoconf.h:
+  hash: e12c8c84791a4c36e55527f78b2fcc3f3ece25273fc1d57259d06d6798f213b3
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/ErrM.hs:
+  hash: 91d43beb5d7e2ec1cc78ad4b1f07da9a2ede237b0ea36357e01eb250d1017437
+/usr/include/stdc-predef.h:
+  hash: 255b8a51a5c87c5ece734b51b19158f9e9b2f03cbf47178adad8bf1a923cd83d
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/Interpreter.hs:
+  hash: b856a3aa5fd198410e4c2e0d8f32fc8ea4038ef0287031adb96831c4476ec071
+/root/.stack/programs/x86_64-linux/ghc-8.6.4/lib/ghc-8.6.4/include/ghcconfig.h:
+  hash: 03f4611ae97decc9e8c76c212bf7886d003b29d5c62b43fee6623a799f6e5fdf
+/root/.stack/programs/x86_64-linux/ghc-8.6.4/lib/ghc-8.6.4/include/ghcversion.h:
+  hash: 529291d4a255ef1c3ec99116d8dca391f2db7bad8b5eab6dcbf9a70354c6eedf
+/root/.stack/programs/x86_64-linux/ghc-8.6.4/lib/ghc-8.6.4/include/ghcplatform.h:
+  hash: 6f30e9ad0022d26323aca04816a74e38a04af174747fe91efa77324c78b0d73d
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/LambdaNat.cabal:
+  hash: 7e33c644afb8a8a5f9fdc605c2c827865b4de067cec8db142abff39d3b197efd
+? /home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/autogen/Paths_LambdaNat.hs
+: hash: 3fae402e03cd909be8b5866317f95c992df2c3b4b0e7f6fc99c691cc9fd0644d
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/src/LexLambdaNat.hs:
+  hash: a21510d1dbd06950a9753ab6dbc9fbbe721cb0e4bb9a952100b8dd08921ac91d
+/home/CPSC_354/PLRepo/ProgrammingLanguages/Assignment2/LambdaNat3/ChangeLog.md:
+  hash: 8813e52402bb3e213004a0a8162e4be2b4db6c6e9f671b755a7189dc61dd329f
