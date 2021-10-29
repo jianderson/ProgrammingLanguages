@@ -22,6 +22,27 @@ echo "(\ x. \y. S x y) S S 0" | stack exec LambdaNat-exe
 
 //let f = \x. if x=0 then a else b in (f 0)
 
-if (S 0) = minus_one (S(S 0)) then (S 0) else 0
+//if (S 0) = minus_one (S(S 0)) then (S 0) else 0
 
 //let x = (S 0) in x
+
+//minus_one(minus_one(S S 0))
+
+//minus_one (let x = (S 0) in x)
+
+
+//test cases from homework
+
+let rec f = (\ x . S x) in f 0
+
+//let rec f = (\ x . if x = 0 then 0 else f (minus_one x)) in f (S 0)
+
+//let rec f = (\ x . if x = 0 then 0 else f (minus_one x)) in f (S S 0)
+
+//let rec f = (\ x . 
+  //if x = 0 
+  //then x 
+  //else c (f (minus_one x))) 
+//in 
+  //f (S 0)
+

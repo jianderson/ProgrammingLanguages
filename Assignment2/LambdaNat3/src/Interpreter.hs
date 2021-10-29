@@ -37,6 +37,10 @@ evalCBN (EMinusOne e) = case (evalCBN e) of
 
 evalCBN (ELet i e1 e2) = evalCBN(EApp (EAbs i e2) e1)
 
+evalCBN (EFix e) = evalCBN (EApp e (EFix e))
+
+evalCBN (ERec i e1 e2) = evalCBN (EApp (EAbs i e2) (EFix (EAbs i e1)))
+
 evalCBN ENat0 = ENat0
 evalCBN (ENatS e) = ENatS (evalCBN e)
 ----------------------------------------------------
@@ -81,3 +85,9 @@ subst id s (EIf e1 e2 e3 e4) = EIf (subst id s e1) (subst id s e2) (subst id s e
 subst id s (EMinusOne e) = EMinusOne (subst id s e)
 
 subst id s (ELet i e1 e2) = subst id s (EApp (EAbs i e1) e2)
+
+subst id s (EFix e) = EFix (subst id s e)
+
+subst id s (ERec i e1 e2) = subst id s (EApp (EAbs i e2) (EFix (EAbs i e1)))
+
+
