@@ -22,7 +22,6 @@ evalCBN (EHd e) = case (evalCBN e1) of
     (ECons e1 _ ) -> evalCBN e1
 evalCBN (ETl e) = case (evalCBN e1) of
         (ECons _ e1) -> evalCBN e1
--- evalCBN (ETl e)
 -- evalCBN (ELE e1 e2)
 evalCBN (EPlus e1 e2) = case (evalCBN e1) of
     (EInt n) -> case (evalCBN e2) of
