@@ -14,13 +14,6 @@ in
 member 3 2:3:1:#
 
 /*
-let rec member = \elem. \list.
-    if EHd(list) = ETl(list) then 0 else
-        if EHd(list) = elem then 1 else
-            member elem ETl(list)
-in
-member 1 2:3:1:#
-
 let rec sum = \list.
     if list = # then 0 else
         EPlus (EHd (list))(sum (ETl (list)))
