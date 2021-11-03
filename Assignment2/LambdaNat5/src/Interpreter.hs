@@ -79,4 +79,8 @@ subst id s (EInt n) = EInt n
 subst id s (EPlus e l) = EPlus (subst id s e) (subst id s l)
 subst id s (EMinus e l) = EMinus (subst id s e) (subst id s l)
 subst id s (ETimes e l) = ETimes (subst id s e) (subst id s l)
+subst id s (ECons e l) = ECons (subst id s e) (subst id s l)
+subst id s (EHd e) = EHd (subst id s e)
+subst id s (ETl e) = ETl (subst id s e)
+subst id s (ENil) = ENil
 -- add the missing cases
