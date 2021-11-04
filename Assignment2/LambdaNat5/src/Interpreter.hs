@@ -82,5 +82,6 @@ subst id s (ETimes e l) = ETimes (subst id s e) (subst id s l)
 subst id s (ECons e l) = ECons (subst id s e) (subst id s l)
 subst id s (EHd e) = EHd (subst id s e)
 subst id s (ETl e) = ETl (subst id s e)
+subst id s (ELE e l) = ELE (subst id s e) (subst id s l)
 subst id s (ENil) = ENil
 -- add the missing cases
