@@ -1,0 +1,9 @@
+hd one:two
+;;
+hd one:two:#
+;;
+hd (one:two):#
+;;
+hd (one:two:#):#
+;;
+(hd one:two:#):#

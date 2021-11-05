@@ -1,4 +1,4 @@
--- member function 
+--member function 
 mymember :: Int -> [Int] -> Bool
 mymember _ [] = False
 mymember x (y:ys) = if y == x then True else mymember x ys
