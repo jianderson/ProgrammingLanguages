@@ -58,7 +58,7 @@ let rec insert = \elem. \list.
         (hd list) : (insert elem (tl list))
 in
 insert 3 2:4:5:#
-if (hd (tl list)) less_equal (hd list) = 1 then (sort (tl list)) : (hd list) else (hd list) : (sort (tl list))
+if (hd (tl list)) less_equal (hd list) = 1 then (sort (tl list)) : (hd list) else (hd list) : (sort (tl list)) --delete this 
 
 */
 

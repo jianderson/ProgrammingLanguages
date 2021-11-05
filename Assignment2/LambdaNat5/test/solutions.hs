@@ -22,19 +22,15 @@ myprod (x:xs) = x * myprod xs
 myplus_two :: Int -> Int
 myplus_two x = x + 2
 
--- let plus_two = \int.
---     (2) + (int)
--- in
--- let rec map = \func. \list.
---     if list = # then # else
---         (func (hd list)) : (map func (tl list))
--- in
--- map plus_two 1:2:3:#
-
 --map function
 mymap :: (Int -> Int) -> [Int] -> [Int]
 mymap func [] = []
 mymap func (x:xs) = (func x) : (mymap func xs)
+
+--insert function
+myinsert :: Int -> [Int] -> [Int]
+myinsert a [] = [a]
+myinsert x (y:ys) = if x <= y then x : y : ys else y : myinsert x ys
 
 main = do
     --print $ mymember 3 [1,2,3]
@@ -42,4 +38,5 @@ main = do
     --print $ myprod [4,5,3]
     --print $ myplus_two (0)
     --print $ myremove 2 [1,2,3]
-    print $ mymap myplus_two [1,0,3]
+    --print $ mymap myplus_two [1,0,3]
+    print $ myinsert 3 [1,2,4]
