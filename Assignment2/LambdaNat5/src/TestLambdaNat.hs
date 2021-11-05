@@ -3,10 +3,10 @@
 module Main where
 
 import Prelude
-  ( ($), (.)
+  ( ($)
   , Either(..)
   , Int, (>)
-  , String, (++), concat, unlines
+  , String, (++), unlines
   , Show, show
   , IO, (>>), (>>=), mapM_, putStrLn
   , FilePath
@@ -17,7 +17,7 @@ import System.Exit        ( exitFailure, exitSuccess )
 import Control.Monad      ( when )
 
 import AbsLambdaNat   ()
-import LexLambdaNat   ( Token, mkPosToken )
+import LexLambdaNat   ( Token )
 import ParLambdaNat   ( pProgram, myLexer )
 import PrintLambdaNat ( Print, printTree )
 import SkelLambdaNat  ()
@@ -38,7 +38,7 @@ run v p s =
     Left err -> do
       putStrLn "\nParse              Failed...\n"
       putStrV v "Tokens:"
-      mapM_ (putStrV v . showPosToken . mkPosToken) ts
+      putStrV v $ show ts
       putStrLn err
       exitFailure
     Right tree -> do
@@ -47,7 +47,6 @@ run v p s =
       exitSuccess
   where
   ts = myLexer s
-  showPosToken ((l,c),t) = concat [ show l, ":", show c, "\t", show t ]
 
 showTree :: (Show a, Print a) => Int -> a -> IO ()
 showTree v tree = do
