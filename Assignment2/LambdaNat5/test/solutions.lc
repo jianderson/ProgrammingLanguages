@@ -40,12 +40,14 @@ in
 plus_two x
 
 
-let rec map = \func. \list.
-    if (tl list) = # then func (hd list) else
-    if (tl list) != # then func (hd list) else
-        map func (tl list)
+let plus_two = \int.
+    (2) + (int)
 in
-map plus_two 1:2:3:4:#
+let rec map = \func. \list.
+    if list = # then # else
+        (func (hd list)) : (map func (tl list))
+in
+map plus_two 1:2:3:#
 
 
 
@@ -58,10 +60,6 @@ in
 insert 3 2:4:5:#
 
 
-let rec sort = \list.
-    insert (hd list) (tl list)
-in
-sort 1:2:3:1:2:3:#
 */
 
 let rec sort = \list.
