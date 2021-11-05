@@ -58,11 +58,15 @@ let rec insert = \elem. \list.
         (hd list) : (insert elem (tl list))
 in
 insert 3 2:4:5:#
-
+if (hd (tl list)) less_equal (hd list) = 1 then (sort (tl list)) : (hd list) else (hd list) : (sort (tl list))
 
 */
 
+let rec insert = \elem. \list.
+    if elem less_equal (hd list) = 1 then (elem:(hd list):(tl list)) else
+        (hd list) : (insert elem (tl list))
+in
 let rec sort = \list.
-    if (hd(tl list)) less_equal (hd list) = 1 then (tl list):(hd list) else (hd list) : (sort (tl list))
+    insert (hd list) (sort (tl list))
 in
 sort 1:2:3:1:2:3:#
