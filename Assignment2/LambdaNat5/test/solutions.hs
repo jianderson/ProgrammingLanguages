@@ -34,15 +34,37 @@ myinsert x (y:ys) = if x <= y then x : y : ys else y : myinsert x ys
 
 --sort function
 mysort :: [Int] -> [Int]
-mysort [a] = [a]
+mysort [] = []
 mysort (x:xs) = myinsert x (mysort xs)
 
+--Our test cases - same as in solutions.lc
 main = do
-    --print $ mymember 3 [1,2,3]
-    --print $ mysum [-3,5]
-    --print $ myprod [4,5,3]
+    --print $ mymember 2 []
+    --print $ mymember 1 [2,3,1]
+    --print $ mymember 5 [1,2,3]
+
+    --print $ myremove 2 []
+    --print $ myremove 2 [1,2,3,1,2,3]
+    --print $ myremove 2 [1,3,4]
+
+    --print $ mysum []
+    --print $ mysum [1,2,3,4]
+    --print $ mysum [0]
+
+    --print $ myprod []
+    --print $ myprod [1,2,3,4]
+    --print $ myprod [0]
+
+    --print $ myplus_two (3)
     --print $ myplus_two (0)
-    --print $ myremove 2 [1,2,3]
-    --print $ mymap myplus_two [1,0,3]
+
+    --print $ mymap myplus_two []
+    --print $ mymap myplus_two [1,2,3,4]
+    --print $ mymap myplus_two [0]
+
+    --print $ myinsert 3 []
     --print $ myinsert 3 [1,2,4]
-    print $ mysort [1,2,3,2,1,8]
+
+    --print $ mysort []
+    --print $ mysort [1,2,3,1,2,3]
+    --print $ mysort [1,2,3,4]
