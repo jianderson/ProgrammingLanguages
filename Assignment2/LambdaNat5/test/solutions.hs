@@ -32,6 +32,11 @@ myinsert :: Int -> [Int] -> [Int]
 myinsert a [] = [a]
 myinsert x (y:ys) = if x <= y then x : y : ys else y : myinsert x ys
 
+--sort function
+mysort :: [Int] -> [Int]
+mysort [a] = [a]
+mysort (x:xs) = myinsert x (mysort xs)
+
 main = do
     --print $ mymember 3 [1,2,3]
     --print $ mysum [-3,5]
@@ -39,4 +44,5 @@ main = do
     --print $ myplus_two (0)
     --print $ myremove 2 [1,2,3]
     --print $ mymap myplus_two [1,0,3]
-    print $ myinsert 3 [1,2,4]
+    --print $ myinsert 3 [1,2,4]
+    print $ mysort [1,2,3,2,1,8]
