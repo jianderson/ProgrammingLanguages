@@ -16,6 +16,11 @@
 -- mymember a b = if (hd b) = a then True else mymember(a (tl b))
 
 
+--remove function
+myremove :: Int -> [Int] -> [Int]
+myremove _ [] = []
+myremove x (y:ys) = if x == y then ys else y : myremove x ys
+
 --sum function
 mysum :: [Int] -> Int
 mysum [] = 0
@@ -35,4 +40,5 @@ main = do
     --print $ mymember 3 [1:2:3:4:#]
     --print $ mysum [-3,5]
     --print $ myprod [4,5,3]
-    print $ myplus_two (0)
+    --print $ myplus_two (0)
+    print $ myremove 2 [1,2,3]
