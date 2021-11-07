@@ -1,7 +1,7 @@
 # Assignment 2
 # Group Members: Jillian Anderson and Jessie Roux
-# Submission Date: 11/7/21
-# Due Date : 11/7/21
+# Submission Date: 11/9/21
+# Due Date : 11/10/21
 
 # Description of Accomplished Parts: Jill and Jessie continued to utilize github. They were able to use the push and pull actions taking turns committing work. They booked multiple study rooms and Zoomed to ensure they were always working together. They were able to successfully complete all parts of the assignment as well as consider questions that arose throughout the process. They utilized lecture notes, professor office hours, SI sessions and office hours, and external research when needed.
 
@@ -11,13 +11,13 @@
 
 # Learnings: We learned so much about Haskell, Lambda Calculus, and recursion during this assignment. I think our greatest learning through this assignment was seeing lambda calculus put into practice and seeing how it compares to a Haskell program. Additionally, we feel confident in our ability to use lists with lambda calculus and in Haskell after this assignment. 
 
-# Connecting to Theory:
-
-# Interesting Observations and Questions: 
+# Interesting Observations and Connecting to Theory: 
 # One question we wanted to discuss was the question of why #:# does not parse but (#):# does. We spent a lot of time thinking about this question and ended up finding the answer in the grammar. For the ECons function the grammar shows that it takes in a Exp16 and an Exp15. Since # is an Exp15 it would not allow for the expression #:# because the lefthand side of the colon would need to be an Exp16 or higher. This Exp16 can either be an integer or another expression, meaning that (#):# is valid while #:# is not. 
 
-# Another question we considered involves the comparison between Assignment 1 and Assignment 2. In Assignment 1 we were able to use +, - and other operators for many different functions that we wrote. However, for our implementations in Assignment 2 it was a bit more complicated than that. We had to create our own functions for add and subtract such as EPlus and EMinus. This is because for Assignment 2, we wanted to be able to add and subtract not just integers but expressions as well.
+# Another question we considered involves the comparison between Assignment 1 and Assignment 2. In Assignment 1 we were able to use +, - and other operators for many different functions that we wrote. However, for our implementations in Assignment 2 it was a bit more complicated than that. We had to create our own functions for add and subtract such as EPlus and EMinus. This is because for Assignment 2, we wanted to be able to add and subtract not just integers but expressions as well. We noticed that in the interpreter file for the calcultor, eval's type signature specifies that it must output an integer where as CBN in lambda calclus can output an expression. With this in mind, we could test the plus_two function with a variable such as x and still recieve an acceptable output as an expression. 
 
 # In our experience with coding in Haskell and then coding LambdaNat5 we noticed some similarities and differences. Lambda calculus and Haskell are semantically the same yet syntactically different. Therefore, we actually found it easier to program solutions.hs because the logic or semantics had already been thoughtout in solutions.lc. We were able to understand the recursion, used and produced data types from solutions.lc and then take our syntactical knowledge in Haskell and apply it. 
 
 #  The specification "the output-list must be sorted in case that the input-list is sorted" is referring to an invariant in the insert function. The insert function works by taking an element and as soon as it finds an integer with greater value, it inserts the element right next to it. If it is sorted from smallest to largest, then naturally it will be a sorted list. Thinking about base cases, it is reasonable to say that an empty list is sorted or even a list with just one element. With these base cases in mind, we can assume that if you insert an element into one of these base cases the list will stay sorted. So if we keep inserting into this list, starting from the base case and up, then the list has to be sorted becuase it is an invariant of insert. 
+
+# Looking at sum x:2:3:4:# and sum 1:2:3:x:# we notice that two different outputs are computed. For sum x:2:3:4:#, the output is x + 9. sum 1:2:3:x:# on the other hand, outputs 1 + (2 + (3 + x)). 
