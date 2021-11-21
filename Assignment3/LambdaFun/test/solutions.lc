@@ -31,3 +31,12 @@ rec prod = \x. case x of {
     [] -> [],
     (a:as) -> case as == [] of {true -> a, _ -> (a) * (prod as)}
 };;
+
+-- plustwo
+val plustwo = \x. x+2;;
+
+-- map
+rec map = \x. \y. case y of {
+    [] -> [],
+    (a:as) -> (x(a)) : (map x(as))
+};;
