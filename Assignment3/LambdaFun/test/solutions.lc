@@ -19,3 +19,9 @@ rec remove = \x. \y. case y of {
     [] -> [],
     (a:as) -> case x == a of {true -> as, _ -> (a) : (remove x as)}
 };;
+
+-- sum
+rec sum = \x. case x of {
+    [] -> [],
+    (a:as) -> case as == [] of {true -> a, _ -> (a) + (sum as)}
+};;
