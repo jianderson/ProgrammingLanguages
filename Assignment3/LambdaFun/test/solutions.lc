@@ -25,3 +25,9 @@ rec sum = \x. case x of {
     [] -> [],
     (a:as) -> case as == [] of {true -> a, _ -> (a) + (sum as)}
 };;
+
+-- prod
+rec prod = \x. case x of {
+    [] -> [],
+    (a:as) -> case as == [] of {true -> a, _ -> (a) * (prod as)}
+};;
