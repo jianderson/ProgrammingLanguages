@@ -1,1 +1,17 @@
--- file for part 2
+val newCList = \e.
+    let val a = new [] in
+    a := [e,a];
+    a;;
+
+-- complete the following functions
+
+val next = \a. 
+    case !a of { [e,a] -> a};;
+
+-- val get = \a. 
+
+-- val insert = \e. \a. 
+
+-- val delete = \a. 
+
+-- val update = \e. \a. 
