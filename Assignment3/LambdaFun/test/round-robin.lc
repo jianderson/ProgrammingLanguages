@@ -5,23 +5,23 @@ val newCList = \e.
 
 -- complete the following functions
 
-val next = \a. 
+val next = \a.
     case !a of { [e,a] -> a};;
 
-val get = \a. 
+val get = \a.
     case !a of { [e,a] -> e};;
 
 --check insert function
-val insert = \e. \a. 
+val insert = \e. \a.
     let val x = newCList e in
     x := [e,(next a)];
     a := [get a, x];;
 
 --check delete function
-val delete = \a. 
+val delete = \a.
     a := [(get a), next (next a)];;
 
-val update = \e. \a. 
+val update = \e. \a.
     a:= [e, next a];;
 
 --TESTS
@@ -176,7 +176,7 @@ val test5 = (testRRobin [addTask 6, tick, tick,addTask 5,tick]) == [3,5];;
 
 val test6 = (testRRobin [addTask 6, tick, tick,addTask 1, tick, tick, tick, tick]) == [2];;
 
-val testAll = 
+val testAll =
     print "testInsert1 passing..." ; println testInsert1;
     print "testInsert2 passing..." ; println testInsert2;
     print "testDelete1 passing..." ; println testDelete1;
