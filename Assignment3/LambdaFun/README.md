@@ -1,59 +1,22 @@
-```
-  $$$$\        $$$$$$$$\                     
-    $$ \       $$  _____|                    
-     $$ \      $$ |    $$\   $$\ $$$$$$$\  
-     $$$ \     $$$$$\  $$ |  $$ |$$  __$$\ 
-    $$ $$ \    $$  __| $$ |  $$ |$$ |  $$ |
-   $$ / $$ \   $$ |    $$ |  $$ |$$ |  $$ |
- $$$ /   $$$\  $$ |    \$$$$$$  |$$ |  $$ |
- \___|   \___| \__|     \______/ \__|  \__|
-```
+**Assignment 1**
 
-To compile run `stack build` and to launch the REPL, run `stack exec lamfun`. For help, type `:help` in the REPL...
+Group Members: Jillian Anderson and Jessie Roux
 
-The full grammar of λFun is given below:
+# Submission Date: 10/03/21
 
-```
-<statement> ::= <expr> ";;" | <defn> ";;"
-<defn>      ::= "val" <id> "=" <expr> | "rec" <id> " " <ids> "=" <expr>
-<expr>      ::= <id> | 
-                <number> | 
-                "true" | 
-                "false" | 
-                "\" <ids> "." <expr> | 
-                <expr> " " <expr> | 
-                <expr> <op> <expr> | 
-                "[" <list> "]" | 
-                <expr> ":" <expr> |
-                "let " <defn> " in " <expr> | 
-                "case " <expr> " of " "{" <case> "}" |
-                "while " <expr> " do " <expr> | 
-                <expr> ";" <expr> |
-                <expr> ":=" <expr> | 
-                "!" <expr> | 
-<list>      ::= "" | <expr> "," <list>
-<expr_opt>  ::= "_" | <expr>
-<case>      ::= <expr_opt> "->" <expr> | <expr_opt> "->" <expr> "," <case>
-<id>        ::= <letter> | <id> <letter> | <id> <digit>
-<ids>       ::= <id> | <id> " " <ids>
-<op>        ::=  "*" | "+" | "-" | "/" | ">" | ">=" | "==" | "!=" | "=<" | "<"
-<number>    ::= <digit>+
-<string>    ::= """ (<letter>|<digit>)* """
-```
+# Due Date: 10/03/21
 
-Remark: 
+# Description of Accomplished Parts:
 
-- `while a do b ; c` is parsed as `(while a do b) ; c`, not as `while a do (b ; c)`
-- Use `:tree` if you want to see the abstract syntax tree.
-- There are built-in functions defined in all environments as follows.
 
-  - One for each `<op>`.
-  - A function `new` to allocate memory.
-  - Functions `head` and `tail` to take the head or tail of a list.
-  - A function `addr` that converts a value (number) into an address.
+# Difficulties:
 
-## Lab2
+# Testing:
 
-**Assignment 3, Part 1:** Implement the programs of Assignment2 in LambdaFun using the built-in lists. See `test/examples.lc` for examples.
 
-**Assignment 3, Part 2, tba:** If you want to have a look already how we will use the new features of the language, read the discussion on the [Memory Model](../../memory-model.md) and study the examples in [linked-list.lc](test/linked-list.lc). 
+# Learnings:
+
+
+# Interesting Observations:
+
+# Connecting the Assignment to the Theory:
