@@ -1,0 +1,16 @@
+val a = new [];;
+a := [1,"NULL"];;
+val b = new [];;
+b := [2,a];;
+a := [3,b];;
+
+val ptr = new [];;
+ptr := a;;
+{-
+!ptr == a;;
+
+case !(!ptr) of { [e,x] -> ptr := x};;
+!ptr == b;;
+case !(!ptr) of { [e,x] -> ptr := x};;
+!ptr == a;;
+-}

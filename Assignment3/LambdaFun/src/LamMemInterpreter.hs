@@ -199,9 +199,9 @@ instance Interpreter 'LamMem where
   show_env (LamMemEnv (Env env, Mem (_,mem))) = 
     "Built in functions:\n" ++
     (intercalate ", " $ map (\(k,v) -> toS k) $ toList builtin) ++
-    "\nEnv:\n" ++
-    (intercalate "\n" $ map (\(k,v) -> toS k ++ " -> " ++ showVal False v) $ filter (\(k,_) -> not $ k `member` builtin_set) $ toList env) ++
-    "\nMemory:\n" ++
+    "\n\ESC[32mEnv:\ESC[0m\n" ++ -- prints green https://replit.com/@alexhkurz/ColouredHaskellOutput#Main.hs
+    (intercalate "\n" $ map (\(k,v) -> toS k ++ " = " ++ showVal False v) $ filter (\(k,_) -> not $ k `member` builtin_set) $ toList env) ++
+    "\n\ESC[32mMemory:\ESC[0m\n" ++ -- prints green
     (intercalate "\n" $ map (\(k,v) -> show k ++ " -> " ++ case v of {Just v' -> showVal False v'; _ -> "un-initialized"}) $ toList mem)
 
     where

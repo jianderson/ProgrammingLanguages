@@ -1,0 +1,1 @@
+val init = let val a = new [] in let val b = new [] in b := [2,a] ; a := [3,b] ;;

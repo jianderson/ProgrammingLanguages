@@ -1,0 +1,34 @@
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/Memory.hs:
+  hash: ae2b75b992f74090173659fe47aaa92abbd17771b789365a2291d1c9648b0e89
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamFunParser.hs:
+  hash: 27af1b72976599b0e4009b9200db2e00f9158c8d989493801934386ab316102e
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/Utils.hs:
+  hash: fd92ea2714052a964e64d8a31ebef29b353731382c319514b73f9ddde369113f
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/Environment.hs:
+  hash: d10dc55d4bbad3d0c1878ad972ad90d654826e046d6e7e5d20e4fa506246df44
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamFunInterpreter.hs:
+  hash: aa1962f1cf78503f1320fe2fc9fde309e8b9cff954eabc342af8a0315e12f87d
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamFunLexer.hs:
+  hash: 6f8ac09c698663424b0880d9b2cff0bd8b3a0077e8648991f773b59612e3ca49
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamFunSyntax.hs:
+  hash: 2530ab9212a08c93a99c4dbcc433890648f1335861bfd6f0a6568289fe7f011c
+/Users/jillian/.stack/programs/x86_64-osx/ghc-8.6.4/lib/ghc-8.6.4/include/ghcversion.h:
+  hash: 529291d4a255ef1c3ec99116d8dca391f2db7bad8b5eab6dcbf9a70354c6eedf
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/autogen/Paths_LamFun.hs
+: hash: 33febfee7abcb335d27d41ec47f8efaea420dfc2094e8031ba159450d907f220
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamArrayInterpreter.hs:
+  hash: 84979df7068c7c93e87d4e9483e8f003caf759d01074846efcb59767cd0580ea
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamInterpreter.hs:
+  hash: 96f7069c8a856137163f3201afd95f87aa34089fc66bc49baf95e218c3238ee3
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/package.yaml:
+  hash: 880b93bb175d405aff9cf5caea3f73a5422f35647f5d0714eee7ae67e854a90c
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamMemInterpreter.hs:
+  hash: 067953b882be6667cc36a41fdf5d3629f24930d021daed27413d44749713421c
+? /Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/autogen/cabal_macros.h
+: hash: b3f8e98daadf941e529c4a8f4f77a0329810c990cac2892b87a0d1e04315bbbe
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/LamFun.cabal:
+  hash: b2fe8a284de1633d831e7d0afeb3cc0d9687507df542926afa6fcd5615d6012a
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamNatInterpreter.hs:
+  hash: f714f3e0bded7d3f37d48c40288d3894f7db28c0f7716cc342557665c50520c9
+/Users/jillian/Documents/SeniorYear/ProgrammingLanguages/ProgrammingLanguages/Assignment3/LambdaFun/src/LamRecInterpreter.hs:
+  hash: 81cbc278fe24cec2702e83b07a4bcd713ff919ab97ef807f8021e7925c370519

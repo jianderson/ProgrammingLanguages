@@ -294,7 +294,7 @@ prompt :: Repl v String
 prompt = do
   buf <- getBuffer
   case buf of 
-    [] -> return $ "λ "
+    [] -> return $ color blue $ "λλλ "
     _ ->  return $ " | "
 
 

@@ -17,9 +17,6 @@ copyright:      2019 Samuel Balco
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-extra-source-files:
-    README.md
-    ChangeLog.md
 
 source-repository head
   type: git
