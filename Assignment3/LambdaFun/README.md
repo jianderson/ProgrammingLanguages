@@ -1,22 +1,19 @@
-**Assignment 1**
+**Assignment 3**
 
-Group Members: Jillian Anderson and Jessie Roux
+**Group Members: Jillian Anderson and Jessie Roux**
 
-# Submission Date: 10/03/21
+**Submission Date: 10/03/21**
 
-# Due Date: 10/03/21
+**Due Date: 10/03/21**
 
-# Description of Accomplished Parts:
+**Description of Accomplished Parts:**
 
+**Difficulties:**
 
-# Difficulties:
+**Testing:**
 
-# Testing:
+**Learnings:**
 
+**Interesting Observations:**
 
-# Learnings:
-
-
-# Interesting Observations:
-
-# Connecting the Assignment to the Theory:
+**Connecting the Assignment to the Theory:**
