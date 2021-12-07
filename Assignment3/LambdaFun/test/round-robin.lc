@@ -11,13 +11,11 @@ val next = \a.
 val get = \a.
     case !a of { [e,a] -> e};;
 
---check insert function
 val insert = \e. \a.
     let val x = newCList e in
     x := [e,(next a)];
     a := [get a, x];;
 
---check delete function
 val delete = \a.
     a := [(get a), next (next a)];;
 
